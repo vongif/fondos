@@ -11,33 +11,35 @@
 
 <body>
 
+    
 
-
-    <div class="bonosHoy">Cotizaciones de Bonos actuales </div>
-    <div>Fondo Bonos1
+    <div class="bonosHoy">Cotizaciones de Bonos
+    
+    <div class="one">Fondo Bonos1
         <label id="fondoBonos1"></label>
     </div>
-    <div>Fondo Equilibrado
-        <label id="fondoEquilibrado"></label>
+    <div class="one">Fondo Equilibrado
+        <label id="fondoEquilibrado" class="1"></label>
     </div>
-    <div>Fondo Leliq
-        <label id="fondoLeliq"></label>
+    <div class="one">Fondo Leliq
+        <label id="fondoLeliq" class="1"></label>
     </div>
-    <div>Fondo Patacon
-        <label id="fondoPatacon"></label>
+    <div class="one">Fondo Patacon
+        <label id="fondoPatacon" class="1"></label>
     </div>
-    <div>Fondo Argenx
-        <label id="fondoArgenx"></label>
+    <div class="one">Fondo Argenx
+        <label id="fondoArgenx" class="1"></label>
     </div>
-    <div>Fondo Roblox
-        <label id="fondoRoblox"></label>
+    <div class="one">Fondo Roblox
+        <label id="fondoRoblox" class="1"></label>
+    </div>
     </div>
 
+    <br>
+    <h2>Elegir fondo para invertir</h2>
 
-    <h1>Elegir fondo para invertir</h1>
-
-    <label>Fondos</label>
-    <select name="tipo_fondo" id="tipo_fondo" onchange="decidir()">
+    <h2>Fondos</h2>
+    <select name="tipo_fondo" id="tipo_fondo" onchange="decidir()" >
         <option value="0">----</option>
         <option value="1">Fondo Bonos1</option>
         <option value="2">Fondo Equilibrado</option>
@@ -47,19 +49,19 @@
         <option value="6">Fondo Roblox</option>
     </select>
 
-    <h1>Resultado</h1>
-    <div id="mensajeValor">
+    <h2>Resultado</h2>
+    
+    <div id="mensajeValor"></div>
+    <div class="estiloResultado">
+    <p>$</p>
+    <p id="valorFondo" ></p>
     </div>
-    <dir id="valorFondo"></dir>
-
-    <script>
-       
-    </script>
-
+    
     <script>
 
-    saldo = document.getElementById("resul")
-        
+     saldo = document.getElementById("resul")
+     let calculo = document.getElementById("final") 
+     valorFondos = document.getElementById("valorFondo")
     
 
     function decidir() {
@@ -72,47 +74,43 @@
     let fondoRoblox = document.getElementById("fondoRoblox").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
 
                 
-        var fond = document.getElementById("tipo_fondo")
-        var selected = fond.options[fond.selectedIndex].value
+        let fond = document.getElementById("tipo_fondo")
+        let selected = fond.options[fond.selectedIndex].value
         document.getElementById("mensajeValor").innerHTML = selected
-       
+               
         if(selected == 1){document.getElementById("valorFondo").innerHTML = (fondoBonos1 * saldo) / 100}
         else if(selected == 2){document.getElementById("valorFondo").innerHTML = (fondoEquilibrado * saldo) / 100}
         else if(selected == 3){document.getElementById("valorFondo").innerHTML = (fondoLeliq * saldo) / 100}
         else if(selected == 4){document.getElementById("valorFondo").innerHTML = (fondoPatacon * saldo) / 100}
         else if(selected == 5){document.getElementById("valorFondo").innerHTML = (fondoArgenx * saldo) / 100}
         else if(selected == 6){document.getElementById("valorFondo").innerHTML = (fondoRoblox * saldo) / 100}
-        else{document.getElementById("valorFondo").innerHTML = "Selecciona un Fondo"}
-
-  
-             
+        else{document.getElementById("valorFondo").innerHTML = "Selecciona un Fondo"}       
+        
+            
     }
     decidir()
     
-        
+    
+
+
+           
     </script>
 
-    <h1>Inversion</h1>
-    <label id="resul"></label>
-
-
-    <div>Perfil del inversor</div>
-    <label id="perfilInversor"></label>
-
-        <br>
-        <br>
-      
-    <div>Saldo Actual
-        <label id="saldoActual"></label>
+    <h2>Inversion</h2>
+    <div class="estiloResultado">
+    <p>$</p>
+    <p id="resul" ></p>
     </div>
 
-
-
-
-
-
-    
-    <div id="final"></div>
+    <h2>Perfil del inversor</h2>
+    <p id="perfilInversor" class="estiloResultado"></p>
+            
+    <h2>Saldo Actual</h2>
+    <div  class="estiloResultado">  
+    <p>$</p> 
+    <div id="final">
+    </div>
+    </div>     
 
     <script src="app.js"></script>
 

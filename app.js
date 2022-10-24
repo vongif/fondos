@@ -1,10 +1,8 @@
-
 let introducir = prompt("Ingresar monto a invertir")
 let saldo = document.getElementById("resul").innerHTML = introducir
-let valorFondo = document.getElementById("valorFondo")
-var calculo = document.getElementById("final").innerHTML += resul.innerHTML + valorFondo.innerHTML
-   
-var perfilInver = ["Conservador","Moderado","Arriesgado"]
+let valorFondos = document.getElementById("valorFondo") 
+  
+let perfilInver = ["Conservador","Moderado","Arriesgado"]
 
 function invertir(){
     if ( saldo >= 0 &&  saldo <= 10000){
@@ -19,9 +17,15 @@ invertir()
 
 
 localStorage.setItem("resul",saldo)
+localStorage.setItem('valorFondo',valorFondos)
 
-   
 
+document.addEventListener("DOMContentLoaded", () => {
+       cuenta = saldo + valorFondos
+       calculo = document.getElementById("final").innerHTML = cuenta
+       });
+
+    
 
 /*
 //----------------------------------------------------------------------------------------------------
