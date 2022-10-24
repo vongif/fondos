@@ -1,0 +1,12 @@
+/*ul {
+    list-style-image: url("foto1.jpg");
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+*/
+
+.bonosHoy {
+    background-color: chartreuse;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+    <div class="bonosHoy">Cotizaciones de Bonos actuales </div>
+    <div>Fondo Bonos1
+        <label id="fondoBonos1"></label>
+    </div>
+    <div>Fondo Equilibrado
+        <label id="fondoEquilibrado"></label>
+    </div>
+    <div>Fondo Leliq
+        <label id="fondoLeliq"></label>
+    </div>
+    <div>Fondo Patacon
+        <label id="fondoPatacon"></label>
+    </div>
+    <div>Fondo Argenx
+        <label id="fondoArgenx"></label>
+    </div>
+    <div>Fondo Roblox
+        <label id="fondoRoblox"></label>
+    </div>
+
+
+    <h1>Elegir fondo para invertir</h1>
+
+    <label>Fondos</label>
+    <select name="tipo_fondo" id="tipo_fondo" onchange="decidir()">
+        <option value="0">----</option>
+        <option value="1">Fondo Bonos1</option>
+        <option value="2">Fondo Equilibrado</option>
+        <option value="3">Fondo Leliq</option>
+        <option value="4">Fondo Patacon</option>
+        <option value="5">Fondo Argenx</option>
+        <option value="6">Fondo Roblox</option>
+    </select>
+
+    <h1>Resultado</h1>
+    <div id="mensajeValor">
+    </div>
+    <dir id="valorFondo"></dir>
+
+    <script>
+       
+    </script>
+
+    <script>
+
+    saldo = document.getElementById("resul")
+        
+    
+
+    function decidir() {
+        
+    let fondoBonos1 = document.getElementById("fondoBonos1").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+    let fondoEquilibrado = document.getElementById("fondoEquilibrado").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+    let fondoLeliq = document.getElementById("fondoLeliq").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+    let fondoPatacon = document.getElementById("fondoPatacon").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+    let fondoArgenx = document.getElementById("fondoArgenx").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+    let fondoRoblox = document.getElementById("fondoRoblox").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+
+                
+        var fond = document.getElementById("tipo_fondo")
+        var selected = fond.options[fond.selectedIndex].value
+        document.getElementById("mensajeValor").innerHTML = selected
+       
+        if(selected == 1){document.getElementById("valorFondo").innerHTML = (fondoBonos1 * saldo) / 100}
+        else if(selected == 2){document.getElementById("valorFondo").innerHTML = (fondoEquilibrado * saldo) / 100}
+        else if(selected == 3){document.getElementById("valorFondo").innerHTML = (fondoLeliq * saldo) / 100}
+        else if(selected == 4){document.getElementById("valorFondo").innerHTML = (fondoPatacon * saldo) / 100}
+        else if(selected == 5){document.getElementById("valorFondo").innerHTML = (fondoArgenx * saldo) / 100}
+        else if(selected == 6){document.getElementById("valorFondo").innerHTML = (fondoRoblox * saldo) / 100}
+        else{document.getElementById("valorFondo").innerHTML = "Selecciona un Fondo"}
+
+  
+             
+    }
+    decidir()
+    
+        
+    </script>
+
+    <h1>Inversion</h1>
+    <label id="resul"></label>
+
+
+    <div>Perfil del inversor</div>
+    <label id="perfilInversor"></label>
+
+        <br>
+        <br>
+      
+    <div>Saldo Actual
+        <label id="saldoActual"></label>
+    </div>
+
+
+
+
+
+
+    
+    <div id="final"></div>
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
