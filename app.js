@@ -1,6 +1,5 @@
 let introducir = prompt("Ingresar monto a invertir")
 let saldo = document.getElementById("resul").innerHTML = introducir
-let valorFondos = document.getElementById("valorFondo").innerHTML 
 let calculo = document.getElementById("final").innerHTML 
 
 let perfilInver = ["Conservador","Moderado","Arriesgado"]
@@ -19,6 +18,40 @@ invertir()
 
 localStorage.setItem("resul",saldo)
 
+
+function decidir() {
+        
+       let fondoBonos1 = document.getElementById("fondoBonos1").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+       let fondoEquilibrado = document.getElementById("fondoEquilibrado").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+       let fondoLeliq = document.getElementById("fondoLeliq").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+       let fondoPatacon = document.getElementById("fondoPatacon").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+       let fondoArgenx = document.getElementById("fondoArgenx").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+       let fondoRoblox = document.getElementById("fondoRoblox").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
+   
+                   
+           var fond = document.getElementById("tipo_fondo")
+           var selected = fond.options[fond.selectedIndex].value
+           document.getElementById("mensajeValor").innerHTML = selected
+          
+          
+           if(selected == 1){document.getElementById("valorFondo").innerHTML = ((fondoBonos1 * saldo) / 100).toFixed(3)}
+           else if(selected == 2){document.getElementById("valorFondo").innerHTML = ((fondoEquilibrado * saldo) / 100).toFixed(3)}
+           else if(selected == 3){document.getElementById("valorFondo").innerHTML= ((fondoLeliq * saldo) / 100).toFixed(3)}
+           else if(selected == 4){document.getElementById("valorFondo").innerHTML =((fondoPatacon * saldo) / 100).toFixed(3)}
+           else if(selected == 5){document.getElementById("valorFondo").innerHTML = ((fondoArgenx * saldo) / 100).toFixed(3)}
+           else if(selected == 6){document.getElementById("valorFondo").innerHTML = ((fondoRoblox * saldo) / 100).toFixed(3)}
+           else{document.getElementById("valorFondo").innerText = "Selecciona un Fondo"}
+         
+           //let calculo = document.getElementById("final").innerHTML = resul.innerHTML += valorfondos.innerHTML
+   
+                  
+           return  calculo = document.getElementById("final").innerHTML = (valorFondo.innerHTML*1)+(resul.innerHTML*1)
+             
+                      
+   
+       }
+
+       
 
 
 
