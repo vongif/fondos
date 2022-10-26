@@ -7,11 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
+   
+
 </head>
 
 <body>
 
-    
+
 
     <div class="bonosHoy">Cotizaciones de Bonos
     
@@ -49,7 +52,7 @@
         <option value="6">Fondo Roblox</option>
     </select>
 
-    <h2>Resultado</h2>
+    <h1>Resultado</h1>
     
     <div id="mensajeValor"></div>
     <div class="estiloResultado">
@@ -59,9 +62,10 @@
     
     <script>
 
-     saldo = document.getElementById("resul")
-     let calculo = document.getElementById("final") 
-     valorFondos = document.getElementById("valorFondo")
+   
+
+    //saldo = document.getElementById("resul")
+    //valorFondos = document.getElementById("valorFondo")  
     
 
     function decidir() {
@@ -74,26 +78,29 @@
     let fondoRoblox = document.getElementById("fondoRoblox").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
 
                 
-        let fond = document.getElementById("tipo_fondo")
-        let selected = fond.options[fond.selectedIndex].value
+        var fond = document.getElementById("tipo_fondo")
+        var selected = fond.options[fond.selectedIndex].value
         document.getElementById("mensajeValor").innerHTML = selected
-               
-        if(selected == 1){document.getElementById("valorFondo").innerHTML = (fondoBonos1 * saldo) / 100}
-        else if(selected == 2){document.getElementById("valorFondo").innerHTML = (fondoEquilibrado * saldo) / 100}
-        else if(selected == 3){document.getElementById("valorFondo").innerHTML = (fondoLeliq * saldo) / 100}
-        else if(selected == 4){document.getElementById("valorFondo").innerHTML = (fondoPatacon * saldo) / 100}
-        else if(selected == 5){document.getElementById("valorFondo").innerHTML = (fondoArgenx * saldo) / 100}
-        else if(selected == 6){document.getElementById("valorFondo").innerHTML = (fondoRoblox * saldo) / 100}
-        else{document.getElementById("valorFondo").innerHTML = "Selecciona un Fondo"}       
-        
-            
+       
+       
+        if(selected == 1){document.getElementById("valorFondo").innerHTML = ((fondoBonos1 * saldo) / 100).toFixed(3)}
+        else if(selected == 2){document.getElementById("valorFondo").innerHTML = ((fondoEquilibrado * saldo) / 100).toFixed(3)}
+        else if(selected == 3){document.getElementById("valorFondo").innerHTML= ((fondoLeliq * saldo) / 100).toFixed(3)}
+        else if(selected == 4){document.getElementById("valorFondo").innerHTML =((fondoPatacon * saldo) / 100).toFixed(3)}
+        else if(selected == 5){document.getElementById("valorFondo").innerHTML = ((fondoArgenx * saldo) / 100).toFixed(3)}
+        else if(selected == 6){document.getElementById("valorFondo").innerHTML = ((fondoRoblox * saldo) / 100).toFixed(3)}
+        else{document.getElementById("valorFondo").innerText = "Selecciona un Fondo"}
+      
+        //let calculo = document.getElementById("final").innerHTML = resul.innerHTML += valorfondos.innerHTML
+
+        localStorage.setItem('valorFondo', valorFondo)
+       
+        return  calculo = document.getElementById("final").innerHTML = resul.innerHTML += valorFondo.innerHTML
+        // valorFondos = document.getElementById("valorFondo").innerHTML   
+
     }
-    decidir()
-    
-    
-
-
-           
+    //decidir()
+   
     </script>
 
     <h2>Inversion</h2>
@@ -102,18 +109,20 @@
     <p id="resul" ></p>
     </div>
 
-    <h2>Perfil del inversor</h2>
+    <h1>Perfil del inversor</h1>
     <p id="perfilInversor" class="estiloResultado"></p>
             
-    <h2>Saldo Actual</h2>
+    <h1>Saldo Actual</h1>
     <div  class="estiloResultado">  
-    <p>$</p> 
-    <div id="final">
+    <p>$</p>
+    <p id="final"></p>
     </div>
-    </div>     
-
+        
     <script src="app.js"></script>
 
+
+
+   
 
 </body>
 
