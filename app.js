@@ -17,10 +17,14 @@ invertir()
 
 
 let billeteraTotal = 0
-
+let billetera1 = 0
+let billetera2 = 0
+let billetera3 = 0
 
 function decidir() {
-        
+       
+       let valorfondo = document.getElementById("valorFondo").innerHTML
+
        let fondoBonos1 = document.getElementById("fondoBonos1").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
        let fondoEquilibrado = document.getElementById("fondoEquilibrado").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
        let fondoLeliq = document.getElementById("fondoLeliq").innerHTML = (Math.random() * (10 - 1) - 5).toFixed(3)
@@ -43,27 +47,52 @@ function decidir() {
            else{document.getElementById("valorFondo").innerText = "Selecciona un Fondo"}
          
 
-           localStorage.setItem('calculo', calculo)
-           localStorage.setItem('saldo', saldo)
+       localStorage.setItem('calculo', calculo)
+       localStorage.setItem('saldo', saldo)
+       localStorage.setItem('valorFondo',valorfondo)
 
-           let billetera1 = localStorage.getItem('saldo')
-           let billetera2 = localStorage.getItem('calculo')
+
+
        
-         
-         billeteraTotal = document.getElementById("billetera").innerHTML = parseFloat(billetera1) + parseFloat(billetera2) 
-   
-                  
-
-
-           return  calculo = document.getElementById("final").innerHTML = (valorFondo.innerHTML*1)+(resul.innerHTML*1)
+       let billetera1 = localStorage.getItem('saldo')
+       let billetera2 = localStorage.getItem('calculo')
+       let billetera3 = localStorage.getItem('valorFondo')
+       let sumas = billetera1 + billetera3
+       document.getElementById("sumas").innerHTML = sumas
+       localStorage.setItem('sumas',sumas)
+       
            
-       }
-
        
 
+         
+       //billeteraTotal = document.getElementById("billetera").innerHTML = parseFloat(billetera1) + parseFloat(billetera2) - saldo    
+
+              
+       return  calculo = document.getElementById("final").innerHTML =  (resul.innerHTML*1) + (valorFondo.innerHTML*1)
+           
+}
+   
+     
 
 
+
+/*function assert() {
+       let valorDeInput = document.getElementById('btn2').value;
+       let user = localStorage.getItem('name_user');
+       let suma =  parseFloat(valorDeInput) + parseFloat (user);
+       document.getElementById('cuadrado').innerHTML = suma;
+       localStorage.setItem('name_user', suma);
+   }
+   */  
     
+  
+
+
+
+
+
+
+
 
 /*
 //----------------------------------------------------------------------------------------------------
