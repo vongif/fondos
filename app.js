@@ -16,7 +16,7 @@ function invertir(){
 invertir()
 
 
-localStorage.setItem("resul",saldo)
+let billeteraTotal = 0
 
 
 function decidir() {
@@ -42,13 +42,21 @@ function decidir() {
            else if(selected == 6){document.getElementById("valorFondo").innerHTML = ((fondoRoblox * saldo) / 100).toFixed(3)}
            else{document.getElementById("valorFondo").innerText = "Selecciona un Fondo"}
          
-           //let calculo = document.getElementById("final").innerHTML = resul.innerHTML += valorfondos.innerHTML
+
+           localStorage.setItem('calculo', calculo)
+           localStorage.setItem('saldo', saldo)
+
+           let billetera1 = localStorage.getItem('saldo')
+           let billetera2 = localStorage.getItem('calculo')
+       
+         
+         billeteraTotal = document.getElementById("billetera").innerHTML = parseFloat(billetera1) + parseFloat(billetera2) 
    
                   
+
+
            return  calculo = document.getElementById("final").innerHTML = (valorFondo.innerHTML*1)+(resul.innerHTML*1)
-             
-                      
-   
+           
        }
 
        
