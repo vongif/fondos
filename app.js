@@ -63,8 +63,7 @@ function decidir() {
        document.getElementById("sumas").innerHTML = sumas
        localStorage.setItem('sumas',sumas)
        
-        siiiiii
-              
+                      
        //billeteraTotal = document.getElementById("billetera").innerHTML = parseFloat(billetera1) + parseFloat(billetera2) - saldo    
 
               
@@ -73,3 +72,38 @@ function decidir() {
 }
    
 
+
+
+
+const labels = [
+   'Fondos Bonos 1',
+   'Fondo Equilibrado',
+   'Fondo Leliq',
+   'Fondo Patacon',
+   'Fondo Argenx',
+   'Fondo Roblox',
+ ];
+
+ const data = {
+   labels: labels,
+   datasets: [{
+     label: 'Cotizacion Fondos',
+     backgroundColor: 'rgb(255, 99, 132)',
+     borderColor: 'rgb(255, 99, 132)',
+     data: [fondoBonos1, fondoEquilibrado, fondoLeliq, fondoPatacon, fondoArgenx, fondoRoblox],
+   }]
+ };
+
+ const config = {
+   type: 'line',
+   data: data,
+   options: {}
+ };
+
+
+
+
+ const myChart = new Chart(
+   document.getElementById('myChart'),
+   config
+ );
