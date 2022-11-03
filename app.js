@@ -48,13 +48,11 @@ function decidir() {
            else if(selected == 6){document.getElementById("valorFondo").innerHTML = ((fondoRoblox * saldo) / 100).toFixed(3)}
            else{document.getElementById("valorFondo").innerText = "Selecciona un Fondo"}
          
+      
 
        localStorage.setItem('calculo', calculo)
        localStorage.setItem('saldo', saldo)
        localStorage.setItem('valorFondo',valorfondo)
-
-
-
        
        let billetera1 = Number(localStorage.getItem('saldo'))
        let billetera2 = localStorage.getItem('calculo')
@@ -62,48 +60,33 @@ function decidir() {
        let sumas = Number(billetera1) + Number(billetera3)
        document.getElementById("sumas").innerHTML = sumas
        localStorage.setItem('sumas',sumas)
-       
-                      
-       //billeteraTotal = document.getElementById("billetera").innerHTML = parseFloat(billetera1) + parseFloat(billetera2) - saldo    
+                             
+        const labels = [
+   'Bonos1','Equilibrado','Leliq','Patacon','Argenx','Roblox'];
+   const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Cotizacion',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [fondoBonos1,fondoEquilibrado,fondoLeliq,fondoPatacon,fondoArgenx,fondoRoblox],
+      }]
+    }; 
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    };
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+ 
 
-              
-       return  calculo = document.getElementById("final").innerHTML =  (resul.innerHTML*1) + (valorFondo.innerHTML*1)
+              calculo = document.getElementById("final").innerHTML =  (resul.innerHTML*1) + (valorFondo.innerHTML*1)
+       return  
            
 }
    
 
 
-
-
-const labels = [
-   'Fondos Bonos 1',
-   'Fondo Equilibrado',
-   'Fondo Leliq',
-   'Fondo Patacon',
-   'Fondo Argenx',
-   'Fondo Roblox',
- ];
-
- const data = {
-   labels: labels,
-   datasets: [{
-     label: 'Cotizacion Fondos',
-     backgroundColor: 'rgb(255, 99, 132)',
-     borderColor: 'rgb(255, 99, 132)',
-     data: [fondoBonos1, fondoEquilibrado, fondoLeliq, fondoPatacon, fondoArgenx, fondoRoblox],
-   }]
- };
-
- const config = {
-   type: 'line',
-   data: data,
-   options: {}
- };
-
-
-
-
- const myChart = new Chart(
-   document.getElementById('myChart'),
-   config
- );

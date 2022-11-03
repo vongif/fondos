@@ -37,6 +37,14 @@
         <label id="fondoRoblox" class="1"></label>
     </div>
     </div>
+<br>
+<br>
+<div class="graficos">
+      <div>
+        <canvas id="myChart" width="700px" height="200px"></canvas>
+      </div>
+      
+</div>
 
     <br>
     <h2>Elegir fondo para invertir</h2>
@@ -59,7 +67,8 @@
     <p>$</p>
     <p id="valorFondo" ></p>
     </div>
-        
+    
+    <div class="decidir">
     <h2>Inversion</h2>
     <div class="estiloResultado">
     $<button onclick="invertir()">Invertir</button>
@@ -74,8 +83,10 @@
     <p>$</p>
     <p id="final"></p>
     </div>
-     
-    <button onclick="decidir()" >Volver a operar / TOTAL
+    </div> 
+
+
+    <button onclick="decidir()" >Volver a operar / TOTAL</button>
 
         <div id="resultadoFinal"></div>
     
@@ -83,9 +94,7 @@
         <div id="sumas"></div>
 
 
-<div>
-  <canvas id="myChart"></canvas>
-</div>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
