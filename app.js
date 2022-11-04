@@ -50,7 +50,6 @@ function decidir() {
          
       
 
-       localStorage.setItem('calculo', calculo)
        localStorage.setItem('saldo', saldo)
        localStorage.setItem('valorFondo',valorfondo)
        
@@ -58,9 +57,11 @@ function decidir() {
        let billetera2 = localStorage.getItem('calculo')
        let billetera3 = Number(localStorage.getItem('valorFondo'))
        let sumas = Number(billetera1) + Number(billetera3)
-       document.getElementById("sumas").innerHTML = sumas
+       document.getElementById("final").innerHTML = sumas
        localStorage.setItem('sumas',sumas)
                              
+
+
         const labels = [
    'Bonos1','Equilibrado','Leliq','Patacon','Argenx','Roblox'];
    const data = {
@@ -81,11 +82,8 @@ function decidir() {
       document.getElementById('myChart'),
       config
     );
- 
-
-              calculo = document.getElementById("final").innerHTML =  (resul.innerHTML*1) + (valorFondo.innerHTML*1)
-       return  
            
+                
 }
    
 

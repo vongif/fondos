@@ -28,10 +28,8 @@ background-repeat: no-repeat;
 font-weight: 600;
 font-family: Segoe UI, Segoe WP, Arial, Sans-Serif;
 color: white; 
-padding-left: 10px;
 
-margin-left: 10px;
-margin-right: 10px;}
+}
 
 label{
 background-color: #5e77b7;
@@ -47,6 +45,7 @@ display: flex;
 flex-wrap: wrap;
 color: #3AF277;
 font-size: 30px;
+padding-right: 10px;
 }
 
 
@@ -75,5 +74,12 @@ border-bottom: 0px solid #757575;
 .decidir{
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resuluno{
+  display: flex;
+  
   align-items: center;
 }

@@ -60,24 +60,26 @@
         <option value="6">Fondo Roblox</option>
     </select>
 
-    <h1>Resultado</h1>
-    
+    <div class="resuluno">
+    <h1>Resultado:  </h1>
     <div id="mensajeValor"></div>
     <div class="estiloResultado">
     <p>$</p>
-    <p id="valorFondo" ></p>
+    <p id="valorFondo"></p>
     </div>
-    
+    </div>
+
     <div class="decidir">
     <h2>Inversion</h2>
     <div class="estiloResultado">
-    $<button onclick="invertir()">Invertir</button>
+    $<button onclick="invertir()" >Invertir</button>
     <input  id="resul">
     </div>
-
+<br>   
     <h1>Perfil del inversor</h1>
-    <p id="perfilInversor" class="estiloResultado"></p>
-            
+   <p id="perfilInversor" class="estiloResultado"></p>
+ <br>      
+    
     <h1>Saldo Actual</h1>
     <div  class="estiloResultado">  
     <p>$</p>
@@ -85,14 +87,14 @@
     </div>
     </div> 
 
-
-    <button onclick="decidir()" >Volver a operar / TOTAL</button>
+    <div>
+    <button onclick="decidir()" >TOTAL</button>
 
         <div id="resultadoFinal"></div>
     
         <div id="billetera"></div>
         <div id="sumas"></div>
-
+</div> 
 
 
 
