@@ -22,6 +22,7 @@ let billeteraTotal = 0
 let billetera1 = 0
 let billetera2 = 0
 let billetera3 = 0
+const chart = 0
 
 function decidir() {
        
@@ -61,8 +62,8 @@ function decidir() {
        localStorage.setItem('sumas',sumas)
                              
 
-
-        const labels = [
+  
+const labels = [
    'Bonos1','Equilibrado','Leliq','Patacon','Argenx','Roblox'];
    const data = {
       labels: labels,
@@ -81,10 +82,13 @@ function decidir() {
     const myChart = new Chart(
       document.getElementById('myChart'),
       config
-    );
-           
-                
+    );     
+    return sumas
+
 }
-   
+
+chart.addEventListener('onclick', decidir())
+
+
 
 

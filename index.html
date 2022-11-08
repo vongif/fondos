@@ -96,8 +96,26 @@
         <div id="sumas"></div>
 </div> 
 
+<div id="array"></div>
+
+<script>
 
 
+const resultados = []
+const nuevoResultado = resultado => new Promise ((resolve,reject) =>{
+    setInterval(()=>{
+        if(resultados==undefined){
+            reject({error: resultado})
+        }
+    decidir().push(resultados)
+    resolve()
+    },2000) 
+})
+nuevoResultado().then((resul) =>{
+    console.log(resultados)
+}).catch(error => console.log(error.code))
+
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="app.js"></script>
