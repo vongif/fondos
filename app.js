@@ -58,10 +58,12 @@ function decidir() {
        let billetera2 = localStorage.getItem('calculo')
        let billetera3 = Number(localStorage.getItem('valorFondo'))
        let sumas = Number(billetera1) + Number(billetera3)
-       document.getElementById("final").innerHTML = sumas
+       document.getElementById("final").innerHTML = sumas      
        localStorage.setItem('sumas',sumas)
-                             
+                     
 
+
+ 
   
 const labels = [
    'Bonos1','Equilibrado','Leliq','Patacon','Argenx','Roblox'];
@@ -83,12 +85,29 @@ const labels = [
       document.getElementById('myChart'),
       config
     );     
-    return sumas
+    
 
-}
 
-chart.addEventListener('onclick', decidir())
+    }
 
+
+
+
+   
+
+let datosArray = localStorage.getItem('sumas')
+
+let arreglo = JSON.parse(datosArray)
+
+for (let index = 0; index < array.length; index++) {
+ 
+      let array = []
+      arreglo = arreglo.concat(array)
+     
+)
+
+var nuevoArregloString = JSON.stringify(arreglo)
+localStorage.setItem('sumas', nuevoArregloString)
 
 
 
