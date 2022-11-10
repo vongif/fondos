@@ -8,49 +8,64 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 
-    
+    <head>
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+            rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    </head>
+
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
 
 </head>
 
 <body>
 
+    <div class="presentacion">
+        <div><u>SIMULADOR DE INVERSIONES</u></div>
+        <div>Elija un fondo para la inversion y deposite un monto para comenzar. Luego, invierta y podra ver el
+            resultado de
+            sus elecciones. Inicie el simulador con la opcion "Volver a operar"</i> </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="bonosHoy"><u>COTIZACIONES DE BONOS
+        </u>
+        <div class="one">Fondo Bonos1
+            <label id="fondoBonos1"></label>
+        </div>
+        <div class="one">Fondo Equilibrado
+            <label id="fondoEquilibrado" class="1"></label>
+        </div>
+        <div class="one">Fondo Leliq
+            <label id="fondoLeliq" class="1"></label>
+        </div>
+        <div class="one">Fondo Patacon
+            <label id="fondoPatacon" class="1"></label>
+        </div>
+        <div class="one">Fondo Argenx
+            <label id="fondoArgenx" class="1"></label>
+        </div>
+        <div class="one">Fondo Roblox
+            <label id="fondoRoblox" class="1"></label>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="graficos">
+        <div>
+            <canvas id="myChart" width="700px" height="200px"></canvas>
+        </div>
 
-
-    <div class="bonosHoy">Cotizaciones de Bonos
-    
-    <div class="one">Fondo Bonos1
-        <label id="fondoBonos1"></label>
     </div>
-    <div class="one">Fondo Equilibrado
-        <label id="fondoEquilibrado" class="1"></label>
-    </div>
-    <div class="one">Fondo Leliq
-        <label id="fondoLeliq" class="1"></label>
-    </div>
-    <div class="one">Fondo Patacon
-        <label id="fondoPatacon" class="1"></label>
-    </div>
-    <div class="one">Fondo Argenx
-        <label id="fondoArgenx" class="1"></label>
-    </div>
-    <div class="one">Fondo Roblox
-        <label id="fondoRoblox" class="1"></label>
-    </div>
-    </div>
-<br>
-<br>
-<div class="graficos">
-      <div>
-        <canvas id="myChart" width="700px" height="200px"></canvas>
-      </div>
-      
-</div>
 
     <br>
-    <h2>Elegir fondo para invertir</h2>
+    <h2><u>Elegir fondo para invertir</u></h2>
 
     <h2>Fondos</h2>
-    <select name="tipo_fondo" id="tipo_fondo" onchange="decidir()" >
+    <select name="tipo_fondo" id="tipo_fondo" onchange="decidir()">
         <option value="0">----</option>
         <option value="1">Fondo Bonos1</option>
         <option value="2">Fondo Equilibrado</option>
@@ -61,53 +76,62 @@
     </select>
 
     <div class="resuluno">
-    <h1>Resultado:  </h1>
-    <div id="mensajeValor"></div>
-    <div class="estiloResultado">
-    <p>$</p>
-    <p id="valorFondo"></p>
-    </div>
+        <h1>Resultado de la Inversion: </h1>
+        <div id="mensajeValor"></div>
+        <div class="estiloResultado">
+            <p>$</p>
+            <p id="valorFondo"></p>
+        </div>
     </div>
 
     <div class="decidir">
-    <h2>Inversion</h2>
-    <div class="estiloResultado">
-    $<button onclick="invertir()" >Invertir</button>
-    <input  id="resul">
+        <h2>Inversion</h2>
+        <div class="estiloResultado">
+            $<button onclick="invertir()" class="mdc-button mdc-button--raised">
+                <span class="mdc-button__label">Depositar</span>
+            </button>
+            <input id="resul">
+        </div>
+        <br>
+        <h1><u>Perfil del inversor: </u></h1>
+        <p id="perfilInversor" class="estiloResultado"></p>
+        <br>
+
+        <h1><u>Saldo Actual</u></h1>
+        <div class="estiloResultado">
+            <p>$</p>
+            <p id="final"></p>
+        </div>
     </div>
-<br>   
-    <h1>Perfil del inversor</h1>
-   <p id="perfilInversor" class="estiloResultado"></p>
- <br>      
-    
-    <h1>Saldo Actual</h1>
-    <div  class="estiloResultado">  
-    <p>$</p>
-    <p id="final"></p>
-    </div>
-    </div> 
 
     <div>
-    <button onclick="decidir()" >REALIZAR OPERACION</button>
-    <button onclick=" location.reload()" >COMENZAR OPERACION</button>
+
+        <button class="mdc-button mdc-button--raised" onclick="decidir()">
+            <span class="mdc-button__label">INVERTIR</span>
+        </button>
+
+        <button class="mdc-button mdc-button--raised" onclick=" location.reload()">
+            <span class="mdc-button__label">INICIAR / VOLVER A OPERAR</span>
+        </button>
 
         <div id="resultadoFinal"></div>
-    
+
         <div id="billetera"></div>
         <div id="sumas"></div>
-</div> 
+    </div>
 
-<div id="array"></div>
+    <div class="footer">
+        <div class="resultAnterior">
+            <h1></h1><u>Resultado Anterior</u></h1>
+        </div>
+        <div class="estiloResultado">
+            <p>$</p>
+            <p id="array"></p>
+        </div>
+    </div>
 
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="app.js"></script>
-
-  
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
 
 </body>
 

@@ -83,3 +83,17 @@ border-bottom: 0px solid #757575;
   
   align-items: center;
 }
+
+.resultAnterior{
+  font-size: 30px;
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mdc-button__label{
+   font-family: Segoe UI, Segoe WP, Arial, Sans-Serif;
+}
