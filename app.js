@@ -63,7 +63,6 @@ function decidir() {
                      
 
 
- 
   
 const labels = [
    'Bonos1','Equilibrado','Leliq','Patacon','Argenx','Roblox'];
@@ -86,28 +85,21 @@ const labels = [
       config
     );     
     
-
-
-    }
-
+    } 
 
 
 
-   
-
-let datosArray = localStorage.getItem('sumas')
-
-let arreglo = JSON.parse(datosArray)
-
-for (let index = 0; index < array.length; index++) {
- 
-      let array = []
-      arreglo = arreglo.concat(array)
-     
-)
-
-var nuevoArregloString = JSON.stringify(arreglo)
-localStorage.setItem('sumas', nuevoArregloString)
-
-
+fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            body: localStorage.getItem('sumas'),
+         }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => document.getElementById("array").innerHTML = data.body
+       
+       )
 
